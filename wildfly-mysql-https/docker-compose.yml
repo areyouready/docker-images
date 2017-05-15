@@ -1,0 +1,15 @@
+mysqldb:
+  container_name: "db"
+  image: mysql:latest
+  environment:
+    MYSQL_DATABASE: <DATABASE_NAME>
+    MYSQL_USER: <USER_NAME>
+    MYSQL_PASSWORD: <PASSWORD>
+    MYSQL_ROOT_PASSWORD: <ROOT_PASSWORD>
+mywildfly:
+  image: <IMAGE_NAME>
+  environment:
+    - MYSQL_URI=db:3306
+  ports:
+    - 8080:8080
+
